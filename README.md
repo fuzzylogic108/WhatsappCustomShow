@@ -19,13 +19,13 @@
 Ther are two main way to use the plugin with html hook or via pure Jquery
 
 1.  HTML:
-	Single number es: <a whatsappShow data-text="Message for you" data-numbers="3470000000" target="_blank"> Example 1</a>
-	Multiple numbers es:<a whatsappShow data-text="Message for you" data-numbers="3470000000,3470000001" target="_blank"> Example 2</a>
+	- Single number es: <a whatsappShow data-text="Message for you" data-numbers="3470000000" target="_blank"> Example 1</a>
+	- Multiple numbers es:<a whatsappShow data-text="Message for you" data-numbers="3470000000,3470000001" target="_blank"> Example 2</a>
 
 2: jQuery:
-	 $("#btnExample3").click(function() {
+	``` $("#btnExample3").click(function() {
         	publicWhatsappShow.createWaLinkOnTheFly("3470000000,347000001", "Message for you", true);
-         });
+         });```
 
 ## Configuration
 
