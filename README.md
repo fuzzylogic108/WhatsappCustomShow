@@ -1,6 +1,5 @@
-# Entity Framework Core Scaffolding with Handlebars
 
-_WhatsappCustomShow._
+# WhatsappCustomShow
 
 - WhatsappCustomShow it's a simple plugin for automize and manage all the dirty things for  whatsapp links:
   -- Test valid phone
