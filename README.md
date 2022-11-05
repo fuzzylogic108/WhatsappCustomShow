@@ -1,5 +1,5 @@
 
-# plugin for automize and manage all the dirty things for  whatsapp links
+# Plugin for automize and manage all the dirty things for  whatsapp links
 
 _WhatsappCustomShow._
 
