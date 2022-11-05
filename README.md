@@ -1,10 +1,13 @@
 
-# WhatsappCustomShow
+# Entity Framework Core Scaffolding with Handlebars
 
-- WhatsappCustomShow it's a simple plugin for automize and manages all the dirty things for  whatsapp links:
-  - Test valid phone
-  - Menages multiple numbers selection 
-  - Format wa Link
+_WhatsappCustomShow._
+
+- WhatsappCustomShow it's a simple plugin for automize and manage all the dirty things for  whatsapp links:
+  -- Test valid phone
+  -- Menages multiple numbers selection 
+  -- Format wa Link
+  -- support and test intrernationals numbers throw PhonUtil library
 
  
 
@@ -12,21 +15,31 @@
 1. Need  jQuery (almost every version) 
 
 2. Put script in the body after jQuery
-
+        <script src="assets/PhoneUtil.js"></script>
         <script src="assets/WhatsappCustomShow.js"></script>
 
 ## Usage
 Ther are two main way to use the plugin with html hook or via pure Jquery
 
 1.  HTML:
-	- Single number es: 
-	```<a whatsappShow data-text="Message for you" data-numbers="3470000000" target="_blank"> Example 1</a>```
-	- Multiple numbers es:
-	 ```<a whatsappShow data-text="Message for you" data-numbers="3470000000,3470000001" target="_blank"> Example 2</a>```
 
-2. jQuery:
-        ```publicWhatsappShow.createWaLinkOnTheFly("3470000000,347000001", "Message for you", true);	```
-		
+Single number es: 
+```html
+<a whatsappShow data-text="Message for you" data-numbers="+393470000000" target="_blank"> Example 1</a>
+```
+
+Multiple numbers es:
+```html
+<a whatsappShow data-text="Message for you" data-numbers="+393470000000,3470000001" target="_blank"> Example 2</a>
+```
+2.  JQuery:
+
+```javascript
+$("#btnExample3").click(function() {
+       	publicWhatsappShow.createWaLinkOnTheFly("3470000000,347000001", "Message for you", true);
+                 });
+```
+
 ## Configuration
 
 This is the default configuration:
@@ -38,7 +51,10 @@ This is the default configuration:
             numberList: [],
             preventMultipleClick: false,//disable multiple numbers popup and selection
             multiple: false, //internal for info
-            preserve: false//if false delete elements if have no valid numbers 
+            preserve: false,//if false delete elements if have no valid numbers 
+            waevent: null,
+            url: "https://api.whatsapp.com/send?phone=",//with phone
+            urlWF: "https://api.whatsapp.com/send?"//without phone
         }
 ```
 
@@ -61,10 +77,22 @@ Single or multiple wa numbers comma separated
 
 
 `preserve`
-Bool, if false, if there aren't valid numbers delete the html element
+Bool, if false, if there aren't valid numbers delete the html element 
 
 
-## Functions
+
+`waevent`
+call the code passed via text... example 
+
+*eventFunction(category,action,label);*
+
+`url`
+basic wa url with phone option
+
+`urlWF`
+wa url without phone option
+
+## Public Functions
 
 `createWaLinkOnTheFly`
 Create an WhatsappCustomShow element via code (see ex)
